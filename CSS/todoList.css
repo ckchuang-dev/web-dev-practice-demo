@@ -1,0 +1,13 @@
+body {
+    background-color: #EDB2DE;
+}
+li {
+    border: 2px dashed orange;
+}
+#cake {
+    border-style: solid;
+}
+
+.completed {
+    text-decoration: line-through;
+}

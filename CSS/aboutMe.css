@@ -1,0 +1,19 @@
+body {
+    background: url(https://images.alphacoders.com/736/736461.png);
+    background-size: cover;
+    border-color: orchid;
+    border-width: 5px;
+    border-style: dashed;
+}
+
+h1 {
+    color: rgba(255, 24, 59, .8);
+    background: url(http://i1.17173cdn.com/2fhnvk/YWxqaGBf/cms3/FVNdRnbkDitaFni.png);
+    background-size: cover;
+}
+h4 {
+    color: #BF6A15;
+}
+li {
+    color: #820835;
+}

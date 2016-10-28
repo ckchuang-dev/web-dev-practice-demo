@@ -1,0 +1,41 @@
+/*border color: #bdc3c7
+date color: #3498db
+h2 color: #2c3e50
+
+font: source sans pro*/
+
+body {
+    border: 18px solid #bdc3c7;
+    font-family: Source Sans Pro;
+    width: 50%;
+    margin: 20px auto;
+}
+
+h2 {
+    font-size: 2.0rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+div {
+    padding: 2% 2%;
+
+}
+
+.date {
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    color: #3498db;
+}
+
+.qrotation {
+    padding-left: 5px;
+    border-left: 5px solid #bdc3c7;
+}
+
+hr{
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}

@@ -1,5 +1,5 @@
 body {
-    background-color: #536278;
+    background-color: #B8C5E6;
 }
 
 #container {
@@ -16,9 +16,22 @@ body {
 }
 
 h1 {
+    height: 50px;
+    text-align: center;
     color: white;
 }
 
 span {
-    color: pink;
+    color: black;
+}
+
+#stripe {
+    background-color: white;
+    border: black 3px solid;
+    height: 30px;
+    text-align: center;
+}
+
+.selected {
+    background-color: blue;
 }

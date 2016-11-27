@@ -1,0 +1,14 @@
+{
+  "name": "expresspractice",
+  "version": "0.0.1",
+  "description": "Simple practice for my Express practice with NodeJS and npm",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DezChuang",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

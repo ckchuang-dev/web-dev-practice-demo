@@ -1,7 +1,58 @@
+h1 {
+    background: #2980f3;
+    color: white;
+    margin: 0;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: normal;
+    font-family: Indie Flower;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    height: 40px;
+    line-height: 40px;
+    color: #639274;
+    background: #ffffff;
+}
+
+li:nth-child(2n) {
+    background: #f7f7f7;
+}
+
+body {
+    font-family: Indie Flower;
+}
+
+input {
+    font-size: 18px;
+    background-color: #f7f7f7;
+    width: 100%;
+    padding: 13px 13px 13px 20px;
+    font-family: Indie Flower;
+
+    /*Fix the out size problem*/
+    box-sizing: border-box;
+}
+
+/*hover and click*/
+input:focus {
+    background: #ffffff;
+    border: 3px solid #2980f3;
+    outline: none;
+}
+
 #container {
     width: 360px;
-    margin: 0 auto;
-    border: 2px solid gray;
+    margin: 100px auto;
+    background: #f7f7f7;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 .completed {

@@ -1,10 +1,17 @@
+body {
+    background: #A1FFCE; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #A1FFCE , #FAFFD1); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #A1FFCE , #FAFFD1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: Indie Flower;
+}
+
 h1 {
     background: #2980f3;
     color: white;
     margin: 0;
     padding: 10px 20px;
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: normal;
     font-family: Indie Flower;
 }
@@ -16,6 +23,7 @@ ul {
 }
 
 li {
+    font-size: 20px;
     height: 40px;
     line-height: 40px;
     color: #639274;
@@ -26,12 +34,25 @@ li:nth-child(2n) {
     background: #f7f7f7;
 }
 
-body {
-    font-family: Indie Flower;
+span {
+    background: #f6432a;
+    color: white;
+    height: 40px;
+    margin-right: 20px;
+    text-align: center;
+    width: 0;
+    display: inline-block;
+    transition: linear 0.1s;
+    opacity: 0;
+}
+
+li:hover span {
+    width: 40px;
+    opacity: 1.0;
 }
 
 input {
-    font-size: 18px;
+    font-size: 20px;
     background-color: #f7f7f7;
     width: 100%;
     padding: 13px 13px 13px 20px;
@@ -39,6 +60,9 @@ input {
 
     /*Fix the out size problem*/
     box-sizing: border-box;
+
+    /*line between input and li*/
+    border: 2px solid rgba(0, 0, 0, 0);
 }
 
 /*hover and click*/
@@ -59,3 +83,9 @@ input:focus {
     color: gray;
     text-decoration: line-through;
 }
+
+.fa-pencil {
+    float: right;
+}
+
+

@@ -16,6 +16,10 @@ $("input[type='text']").on("keypress", function(event){
         //grab text from input
         var toDoItem = $(this).val();
         //create new li into ul
-        $("ul").append("<li><span>X</span> " + toDoItem + "</li>");
+        $("ul").append("<li><span><i class='fa fa-trash-o' aria-hidden='true'></i></span> " + toDoItem + "</li>");
     }
+});
+
+$(".fa-pencil").on("click", function(){
+    $("input[type='text']").fadeToggle();
 });

@@ -5,10 +5,11 @@
     <link rel="stylesheet" type="text/css" href="circle.css">
     <script type="text/javascript" src="assets/js/lib/paper-full.js"></script>
     <script type="text/paperscript" canvas="myCanvas">
-    for(var x = 0; x < 1000; x += 100){
-        for(var y = 0; y < 1000; y+= 100){
-            new Path.Circle(new Point(x, y), 10).fillColor = 'white';
-        }
+    function onKeyDown(event) {
+        var randomPoint = Point.random();
+        var maxPoint = new Point(view.size.width, view.size.height);
+        var point = maxPoint * randomPoint;
+        new Path.Circle(point, 10).fillColor = 'white';
     }
     </script>
 </head>

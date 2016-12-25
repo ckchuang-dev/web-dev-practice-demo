@@ -5,12 +5,23 @@
     <link rel="stylesheet" type="text/css" href="circle.css">
     <script type="text/javascript" src="assets/js/lib/paper-full.js"></script>
     <script type="text/paperscript" canvas="myCanvas">
-    function onKeyDown(event) {
-        var randomPoint = Point.random();
-        var maxPoint = new Point(view.size.width, view.size.height);
-        var point = maxPoint * randomPoint;
-        new Path.Circle(point, 10).fillColor = 'white';
-    }
+        var circles = [];
+
+        function onKeyDown(event) {
+            var randomPoint = Point.random();
+            var maxPoint = new Point(view.size.width, view.size.height);
+            var point = maxPoint * randomPoint;
+            var newCircle = new Path.Circle(point, 50);
+            newCircle.fillColor = 'orange';
+            circles.push(newCircle);
+        }
+
+        function onFrame(event) {
+            for(var i = 0; i < circles.length; i++){
+                circles[i].fillColor.hue += 1;
+                circles[i].scale(.999);
+            }
+        }
     </script>
 </head>
 <body>

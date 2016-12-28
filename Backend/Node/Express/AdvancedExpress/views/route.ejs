@@ -1,0 +1,13 @@
+<% include partials/header %>
+
+<h1>You should start jungling with: <%= thingVar.toUpperCase() %></h1>
+
+<% if(thingVar.toLowerCase() === "redbuff"){ %>
+    <p>You can get first blood then!</p>
+<% } else { %>
+    <p>Then you just farm to win!</p>
+<% } %>
+
+<h2>this is route.ejs file</h2>
+
+<% include partials/footer %>

@@ -13,16 +13,11 @@ html {
     text-rendering: optimizeLegibility;
 }
 
-.row {
-    max-width: 1140px;
-    margin: 0 auto;
-}
-
 header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), #000),url(img/hero.jpg);
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 100vh;/*viewport height*/
 }
 
 .hero-text-box {

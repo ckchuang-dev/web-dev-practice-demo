@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="../../build/react.js"></script>
+  <script src="../../build/react-dom.js"></script>
+  <script src="../../build/browser.min.js"></script>
+  <title>Create Class</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="text/babel">
+    var FirstComponent = React.createClass({
+      render: function() {
+        return (
+          <div>
+            <h1>This is our first component</h1>
+            <h2>This is our second component</h2>
+          </div>
+        )
+      }
+    });
+    ReactDOM.render(
+      <FirstComponent />,
+      document.getElementById('app')
+    );
+  </script>
+</body>
+</html>

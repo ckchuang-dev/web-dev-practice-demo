@@ -4,6 +4,7 @@
   <script src="../../build/react.js"></script>
   <script src="../../build/react-dom.js"></script>
   <script src="../../build/browser.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
   <title>Counter Challenge</title>
 </head>
 <body>
@@ -15,6 +16,14 @@
           counter: 0
         }
       },
+      getDefaultProps: function() {
+        return {
+          valueOne: 1,
+          valueFive: 5,
+          valueTen: 10,
+          text: 'Add'
+        }
+      },
       addCounter: function(num) {
         this.setState({
           counter: this.state.counter + num
@@ -23,15 +32,22 @@
       render: function() {
         let counter = this.state.counter;
         return (
-          <div>
+          <div className="container">
             <h1>Count: {this.state.counter}</h1>
-            <button onClick={() => this.addCounter(1)}>Add 1</button>
-            <button onClick={() => this.addCounter(5)}>Add 5</button>
-            <button onClick={() => this.addCounter(10)}>Add 10</button>
+            <Button style="btn blue-btn" text={`${this.props.text} ${this.props.valueOne}`} value={this.props.valueOne} clickHandler={this.addCounter.bind(this, this.props.valueOne)} />
+            <Button style="btn green-btn" text={`${this.props.text} ${this.props.valueFive}`} value={this.props.valueFive} clickHandler={this.addCounter.bind(this, this.props.valueFive)} />
+            <Button style="btn purple-btn" text={`${this.props.text} ${this.props.valueTen}`} value={this.props.valueTen} clickHandler={this.addCounter.bind(this, this.props.valueTen)} />
           </div>
         )
       }
     });
+
+    var Button = function(props) {
+      return (
+        <button className={props.style} value={props.value} onClick={props.clickHandler}>{props.text}</button>
+      )
+    }
+
     ReactDOM.render (
       <CounterChallenge />,
       document.getElementById('app')

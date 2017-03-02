@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="../../build/react.js"></script>
+  <script src="../../build/react-dom.js"></script>
+  <script src="../../build/browser.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../build/css/style.css">
+  <title>ES6 Class</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="text/babel">
+    class Counter extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { counter: 0 };
+        this.click = this.click.bind(this);
+      }
+      click() {
+        console.log("Cliked!");
+      }
+      render() {
+        return (
+          <div className="container">
+            <Button className="btn blue-btn" clickHandler={this.click} text="Click me!"/>
+          </div>
+        );
+      }
+    }
+
+    Counter.defaultProps = { text: "Hello!" };
+    Counter.propTypes = { text: React.PropTypes.string };
+
+    const Button = (props) => {
+      return(
+        <button className={props.className} onClick={props.clickHandler}>{props.text}</button>
+      )
+    }
+
+
+    ReactDOM.render(
+      <Counter />,
+      document.getElementById('app')
+    );
+  </script>
+</body>
+</html>

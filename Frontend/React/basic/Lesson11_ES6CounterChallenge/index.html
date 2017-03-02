@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="../../build/react.js"></script>
+  <script src="../../build/react-dom.js"></script>
+  <script src="../../build/browser.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../build/css/style.css">
+  <title>Counter Challenge</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="text/babel">
+
+    class CounterChallenge extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { counter: 0 };
+        this.onChange = (state) => { this.setState(state); }
+      }
+      addCounter(num) {
+        this.setState({
+          counter: this.state.counter + num
+        })
+      }
+      render() {
+        return (
+          <div className="container">
+            <h1>Count: {this.state.counter}</h1>
+            <Button style="btn blue-btn" text={`${this.props.text} ${this.props.valueOne}`} value={this.props.valueOne} clickHandler={this.addCounter.bind(this, this.props.valueOne)} />
+            <Button style="btn green-btn" text={`${this.props.text} ${this.props.valueTwo}`} value={this.props.valueTwo} clickHandler={this.addCounter.bind(this, this.props.valueTwo)} />
+            <Button style="btn purple-btn" text={`${this.props.text} ${this.props.valueThree}`} value={this.props.valueThree} clickHandler={this.addCounter.bind(this, this.props.valueThree)} />
+          </div>
+        );
+      }
+    }
+
+    CounterChallenge.defaultProps = {
+      valueOne: 10,
+      valueTwo: 100,
+      valueThree: 10000,
+      text: 'Add'
+    };
+    CounterChallenge.propTypes = {
+      valueOne: React.PropTypes.number,
+      valueTwo: React.PropTypes.number,
+      valueThree: React.PropTypes.number,
+      text: React.PropTypes.string
+    };
+
+    const Button = (props) => {
+      return(
+        <button className={props.style} value={props.value} onClick={props.clickHandler}>{props.text}</button>
+      )
+    }
+
+    ReactDOM.render (
+      <CounterChallenge />,
+      document.getElementById('app')
+    )
+  </script>
+</body>
+</html>

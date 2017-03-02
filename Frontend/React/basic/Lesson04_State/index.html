@@ -27,8 +27,8 @@
       },
       render: function() {
         return (
+          //Wondering how to click button to set name as text input
           <div>
-            {/* Wondering how to click button to set name as text input */}
             <input type="text" onChange={this.nameChanged}/>
             <button onClick={this.nameReset}>Reset Name</button>
             <h1>Hello, my name is {this.state.name}.</h1>

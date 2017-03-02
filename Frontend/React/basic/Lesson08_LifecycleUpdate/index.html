@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="../../build/react.js"></script>
+  <script src="../../build/react-dom.js"></script>
+  <script src="../../build/browser.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../build/css/style.css">
+  <title>Lifecycle Update</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="text/babel">
+    var LikeComponent = React.createClass({
+      updateLikes: function() {
+        ReactDOM.render(
+          <LikeComponent likes={this.props.likes+1}/>,
+          document.getElementById('app')
+        );
+      },
+      getDefaultProps: function() {
+        return({
+          likes: 0
+        })
+      },
+      getInitialState: function() {
+        return({
+          popular: false
+        })
+      },
+      componentWillReceiveProps: function(nextProps) {
+        this.setState({
+          popular: nextProps.likes >= 10
+        })
+      },
+      shouldComponentUpdate: function(nextProps, nextState) {
+        console.log("should Component Update?");
+        console.log("shouldUpdate, nextProps = ", nextProps);
+        console.log("shouldUpdate, nextState = ", nextState);
+        return nextProps.likes%2 == 0
+      },
+      render: function() {
+        return (
+          <div className="container">
+            <h1>{this.state.popular ? "I'm popular!" : null}</h1>
+            <button className="btn blue-btn" onClick={this.updateLikes}>Like: {this.props.likes}</button>
+          </div>
+        )
+      },
+      componentDidUpdate: function(prevProps, prevState) {
+        console.log("componentDidUpdate, prevProps = ", prevProps);
+        console.log("componentDidUpdate, prevState = ", prevState);
+        console.log(ReactDOM.findDOMNode(this));
+      },
+    });
+    ReactDOM.render(
+      <LikeComponent />,
+      document.getElementById('app')
+    );
+  </script>
+</body>
+</html>

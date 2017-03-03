@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="../../build/react.js"></script>
+  <script src="../../build/react-dom.js"></script>
+  <script src="../../build/browser.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../build/css/style.css">
+  <title>Counter Challenge</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="text/babel">
+    let BasicCount = (BasicComponent) => class extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          count: 0
+        }
+        this.incrementCount = this.incrementCount.bind(this);
+      }
+      incrementCount() {
+        console.log("I have been clicked!");
+        this.setState({
+          count: this.state.count + 1
+        })
+      }
+      render() {
+        return(
+          <div className="container">
+            <BasicComponent count={this.state.count} clickHandler={this.incrementCount}/>
+            {/*you can use {...this.state} to replace all the state*/}
+          </div>
+        )
+      }
+    }
+
+    const Button = (props) => {
+      console.log(props);
+      return (
+        <button className="btn blue-btn" onClick={props.clickHandler}>Count: {props.count}</button>
+      )
+    }
+
+    const Label = (props) => {
+      return (
+        <label onMouseMove={props.clickHandler}>Count: {props.count}</label>
+      )
+    }
+
+    let ExtendedButton = BasicCount(Button);
+    let ExtendedLabel = BasicCount(Label);
+
+    const Container = () => {
+      return (
+        <div>
+          <ExtendedButton />
+          <ExtendedLabel />
+        </div>
+      )
+    }
+
+    ReactDOM.render(
+      <Container />,
+      document.getElementById('app')
+    )
+
+  </script>
+</body>
+</html>

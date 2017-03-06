@@ -1,9 +1,13 @@
 import React from 'react';
 import { Radar } from 'react-chartjs';
 
+let capitalize = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 const PokemonInfo = ({pokemon}) => {
   const labels = pokemon.stats.map((info) => {
-    return info.stat.name;
+    return capitalize(info.stat.name);
   });
 
   const data = pokemon.stats.map((info) => {
@@ -26,8 +30,9 @@ const PokemonInfo = ({pokemon}) => {
   };
 
   return(
-    <div>
-      <Radar data={chartData} width={300} height={250} />
+    <div className="Aligner">
+      <img className="Aligner-item" src={pokemon.sprites.front_default} alt='pokemon front' />
+      <Radar className="Aligner-item" data={chartData} width={300} height={250} />
     </div>
   )
 

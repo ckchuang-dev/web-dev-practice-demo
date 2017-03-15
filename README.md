@@ -1,7 +1,5 @@
 # Web-Dev-Practice
 
-# Web-Dev-Practice
-
 ## Reference Course
 ##### [The Web Developer Bootcamp](http://www.udemy.com/the-web-developer-bootcamp) - Colt Steele
 * HTML5/CSS3/JavaScript/Bootstrap/SemanticUI/jQuery/NodeJS/ExpressJS/RESTful/MongoDB

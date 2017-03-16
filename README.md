@@ -16,6 +16,9 @@
 #### – RESTful Blog App: http://dezrestfulblogapp.herokuapp.com/
 * NodeJS/ExpressJS/RESTful/MongoDB
 
+#### – Pokemon Dashboard: http://dezpokedashboard.herokuapp.com/
+* React.JS/Webpack
+
 ## Reference Course
 #### – Colt Steele - [The Web Developer Bootcamp](http://www.udemy.com/the-web-developer-bootcamp)
 * HTML5/CSS3/JavaScript/Bootstrap/SemanticUI/jQuery/NodeJS/ExpressJS/RESTful/MongoDB

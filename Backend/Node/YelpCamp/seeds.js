@@ -52,7 +52,7 @@ function seedDB(){
             });
         }
     });
-    
+
 }
 
 module.exports = seedDB;

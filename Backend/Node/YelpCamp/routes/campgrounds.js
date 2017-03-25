@@ -15,12 +15,16 @@ router.get("/", function(req,res){
 });
 
 //CREATE - Add new campgrounds to DB
-router.post("/", function(req,res){
+router.post("/", isLoggedIn, function(req,res){
     //get data from form and add to campfrounds array in app.js
-    var name = req.body.name;
+    var title = req.body.title;
     var image = req.body.image;
-    var desc = req.body.desc;
-    var newCampground = {name: name, image: image, desc: desc};
+    var description = req.body.description;
+    var author = {
+        id: req.user._id,
+        username: req.user.username
+    };
+    var newCampground = {title: title, image: image, description: description, author: author};
     //Create a new campground and save to DB
     Campground.create(newCampground, function(err, newlyCreated){
         if(err){
@@ -33,7 +37,7 @@ router.post("/", function(req,res){
 });
 
 //NEW - Show form to create new campgrounds
-router.get("/new", function(req,res){
+router.get("/new", isLoggedIn, function(req,res){
     res.render("campgrounds/new");
 });
 
@@ -51,5 +55,13 @@ router.get("/:id", function(req, res){
     });
 
 });
+
+//middleware to check secret page access authentication
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect("/login");
+}
 
 module.exports = router;

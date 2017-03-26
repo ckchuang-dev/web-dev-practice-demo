@@ -4,6 +4,8 @@ var express         = require("express"),
     mongoose        = require("mongoose"),
     passport        = require("passport"),
     passportLocal   = require("passport-local"),
+    methodOverride  = require("method-override"),
+    expressSanitizer= require("express-sanitizer"),
     User            = require("./models/user"),
     SeedDB          = require("./seeds");
 
@@ -29,6 +31,9 @@ app.use(passport.session());
 passport.use(new passportLocal(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
+app.use(expressSanitizer());
+app.use(methodOverride("_method"));
 
 app.use(function(req, res, next){
     res.locals.currentUser = req.user;

@@ -1,6 +1,7 @@
 var express         = require("express"),
     app             = express(),
     bodyParser      = require("body-parser"),
+    flash           = require("connect-flash"),
     mongoose        = require("mongoose"),
     passport        = require("passport"),
     passportLocal   = require("passport-local"),
@@ -34,9 +35,12 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use(expressSanitizer());
 app.use(methodOverride("_method"));
+app.use(flash());
 
 app.use(function(req, res, next){
     res.locals.currentUser = req.user;
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
     next();
 });
 

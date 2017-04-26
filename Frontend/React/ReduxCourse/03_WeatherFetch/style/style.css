@@ -1,0 +1,17 @@
+td, th {
+  vertical-align: middle !important;
+  text-align: center !important;
+}
+
+.input-group {
+  margin: 20px 0px;
+}
+
+td:first-of-type, td:first-of-type > div {
+  height: 180px;
+  width: 200px;
+}
+
+.table-hover tbody tr:hover {
+  transition: background-color 0.3s;
+}

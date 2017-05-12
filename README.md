@@ -3,20 +3,20 @@
 
 ## Demo
 
-#### – Color Game: https://codepen.io/dezchuang/pen/aJLGME
+#### – Color Game: [https://codepen.io/dezchuang/pen/aJLGME](https://codepen.io/dezchuang/pen/aJLGME)
 * HTML/CSS/JavaScript
 
-#### – To-Do List: https://codepen.io/dezchuang/pen/NpaMMK
+#### – To-Do List: [https://codepen.io/dezchuang/pen/NpaMMK](https://codepen.io/dezchuang/pen/NpaMMK)
 * HTML/CSS/JavaScript/jQuery
 
-#### – Patatap Game(w/o music): https://codepen.io/dezchuang/project/editor/DQWpGX/#0
+#### – Patatap Game(w/o music): [https://codepen.io/dezchuang/project/editor/DQWpGX/#0](https://codepen.io/dezchuang/project/editor/DQWpGX/#0)
 * HTML/CSS/JavaScript/Paper.js
-* Referenced by http://patatap.com/ and Colt's course
+* Referenced by [http://patatap.com/](http://patatap.com/) and Colt's course
 
-#### – RESTful Blog App: http://dezrestfulblogapp.herokuapp.com/
+#### – RESTful Blog App: [http://dezrestfulblogapp.herokuapp.com/](http://dezrestfulblogapp.herokuapp.com/)
 * NodeJS/ExpressJS/RESTful/MongoDB
 
-#### – Pokemon Dashboard: http://dezpokedashboard.herokuapp.com/
+#### – Pokemon Dashboard: [http://dezpokedashboard.herokuapp.com/](http://dezpokedashboard.herokuapp.com/)
 * React.JS/Webpack
 
 ## Reference Course
@@ -28,3 +28,6 @@
 
 #### – Tim Knight - [React From The Ground Up](http://www.udemy.com/reactjs-from-the-ground-up)
 * React.JS
+
+#### – Stephen Grider - [Modern React with Redux](https://www.udemy.com/react-redux/)
+* React.JS/Redux/React Router
